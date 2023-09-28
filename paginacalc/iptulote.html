@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>iptu-Lote</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+        body, html {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: #347daa; /* Cor de fundo para destacar o formulário */
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            border: 1px solid #ccc; /* Adiciona uma borda ao redor do formulário */
+            border-radius: 8px; /* Arredonda as bordas do formulário */
+            background-color: #fff; /* Fundo branco para o formulário */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Adiciona sombra para destacar o formulário */
+            width: 500px; /* Largura fixa para o formulário */
+        }
+        .input-group {
+            display: flex;
+            flex-direction: row;
+            gap: 10px; /* Espaçamento entre os campos de entrada */
+            margin-bottom: 10px; /* Espaçamento entre os campos e o botão */
+        }
+        input {
+            flex: 1; /* Ocupar todo o espaço disponível no contêiner */
+            padding: 3px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            margin-top: 3px;
+            
+        }
+        button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007BFF; /* Cor de fundo do botão */
+            color: #fff; /* Cor do texto do botão */
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        p {
+            margin-top: 10px; /* Espaçamento superior após o cálculo */
+            padding: 3px;
+            border: 1px solid rgb(149, 149, 149);
+            margin-bottom: 3px;
+            color: rgb(96, 96, 96);
+            border-radius: 3px;
+            font-size: 12px;
+            width: 100%
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h2>Calcular IPTU Lote não Construído</h2>
+        <p id="mostraraqui">Resultado aqui</p>
+        <div class="input-group">
+            <input placeholder="Digite a área do terreno" type="text" id="meuInput">
+        </div>
+        <button id="meuBotao" onclick="armazenarValorLote()">Calcular IPTU</button>
+
+    </div>
+
+    <script>
+        //calcula IPTU Lote não construído
+        
+        const taxaExpedinte = 4
+        function iptuLote(iptuLote_valorMetroLote){
+            var iptuLote_medidaMetro = document.getElementById('meuInput').value;
+            var iptuLote_valorTotal = iptuLote_valorMetroLote*iptuLote_medidaMetro;
+            if(iptuLote_valorTotal <= 10000){
+            document.getElementById('mostraraqui').innerHTML = iptuLote_valorTotal*0.015+taxaExpedinte+' R$';
+        }
+        else if(iptuLote_valorTotal > 10000 && iptuLote_valorTotal <= 40000){
+            document.getElementById('mostraraqui').innerHTML = iptuLote_valorTotal*0.025+taxaExpedinte+' R$';
+        }
+        else if(iptuLote_valorTotal > 40000){
+            document.getElementById('mostraraqui').innerHTML = iptuLote_valorTotal*0.035+taxaExpedinte+' R$';
+        }
+    }
+        var iptuLote_valorMetroLote = 5;
+
+        function armazenarValorLote(){
+            iptuLote(iptuLote_valorMetroLote);
+        }
+
+    </script>
+</body>
+</html>

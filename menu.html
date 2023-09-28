@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de IPTU 2022</title>
+    <link rel="stylesheet" type="text/css" href="seucaminhopara/estilomenu.css">
+    <style>
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background: linear-gradient(to bottom, #1f9aca, #347daa);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .divpai {
+            background-color: #102b74;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            padding: 20px;
+            width: 90%;
+            max-width: 400px;
+            text-align: center;
+            color: white;
+        }
+
+        .divpai h2 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .button {
+            background-color: #1F8DED;
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 5px;
+            font-size: 16px;
+            text-decoration: none;
+            text-align: center;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button a{
+            
+            color: rgb(37, 36, 117);
+        }
+
+        .button:hover {
+            background-color: #04000B;
+        }
+    </style>
+</head>
+<body>
+    <div class="divpai">
+        <h2>Calcular IPTU 2022</h2>
+        <div class="buttons">
+            <button><a href="/paginacalc/iptulote.html"><strong> IPTU LOTE NÃO CONSTRUÍDO</strong></a></button>
+            <button><a href="/paginacalc/iptulocons.html"><strong> IPTU LOTE CONSTRUÍDO</strong></a></button>
+            <button><a href="/paginacalc/iptucomercio.html"><strong> IPTU COMERCIAL</strong></a></button>
+            <button><a href="/paginacalc/iptubanco.html"><strong> IPTU BANCOS</strong></a></button>
+            <button><a href="/paginacalc/iptuindustria.html"><strong> IPTU INDUSTRIAL</strong></a></button>
+            <button><a href="/paginacalc/iptunaoliber.html"><strong> IPTU PROFISSIONAL LIBERAL</strong></a></button>
+        </div>
+    </div>
+</body>
+</html>
